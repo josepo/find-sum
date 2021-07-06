@@ -6,8 +6,8 @@ namespace FindSum
    {
       public int Result(List<int> values)
       {
-         int i = 0, j;
-         int p = 0, q = 0;
+         int i = 0, j, k;
+         int p = 0, q = 0, r = 0;
          bool found = false;
 
          while (!found && i < values.Count)
@@ -16,11 +16,19 @@ namespace FindSum
 
             while (!found && j < values.Count)
             {
-               p = values[i];
-               q = values[j];
+               k = j + 1;
+               
+               while (!found && k < values.Count)
+               {
+                  p = values[i];
+                  q = values[j];
+                  r = values[k];
 
-               if (p + q == 2020)
-                  found = true;
+                  if (p + q + r == 2020)
+                     found = true;
+
+                  k++;
+               }
 
                j++;
             }
@@ -28,7 +36,7 @@ namespace FindSum
             i++;
          }
 
-         return p * q;
+         return p * q * r;
       }
    }
 }

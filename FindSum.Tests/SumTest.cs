@@ -19,7 +19,7 @@ namespace FindSum.Tests
             1456
          });
 
-         Assert.Equal(514579, result);
+         Assert.Equal(241861950, result);
       }
    }
 }
